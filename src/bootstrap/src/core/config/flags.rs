@@ -161,6 +161,9 @@ pub struct Flags {
     /// Enable BOLT link flags
     #[arg(global = true, long)]
     pub enable_bolt_settings: bool,
+    /// Use protected symbol definitions in rustc_driver
+    #[arg(global = true, long, default_value_t = true)]
+    pub protected_symbol_definitions: bool,
     /// Skip stage0 compiler validation
     #[arg(global = true, long)]
     pub skip_stage0_validation: bool,

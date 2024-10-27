@@ -1057,6 +1057,10 @@ pub fn rustc_cargo(
         cargo.rustflag("-l").rustflag("Enzyme-19");
     }
 
+    if builder.build.config.protected_symbol_definitions {
+        cargo.rustflag("-Zdefault-visibility=protected");
+    }
+
     // We currently don't support cross-crate LTO in stage0. This also isn't hugely necessary
     // and may just be a time sink.
     if compiler.stage != 0 {
